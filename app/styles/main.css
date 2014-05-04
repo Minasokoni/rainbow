@@ -77,52 +77,68 @@ body {
     width: 100%; } }
 @-webkit-keyframes trippin {
   0%, 100% {
-    -webkit-transform: scale(1); }
+    -webkit-transform: scale(1);
+    transform: scale(1); }
 
   50% {
-    -webkit-transform: scale(1.2); } }
+    -webkit-transform: scale(1.2);
+    transform: scale(1.2); } }
 @-moz-keyframes trippin {
   0%, 100% {
-    -webkit-transform: scale(1); }
+    -webkit-transform: scale(1);
+    transform: scale(1); }
 
   50% {
-    -webkit-transform: scale(1.2); } }
+    -webkit-transform: scale(1.2);
+    transform: scale(1.2); } }
 @-o-keyframes trippin {
   0%, 100% {
-    -webkit-transform: scale(1); }
+    -webkit-transform: scale(1);
+    transform: scale(1); }
 
   50% {
-    -webkit-transform: scale(1.2); } }
+    -webkit-transform: scale(1.2);
+    transform: scale(1.2); } }
 @keyframes trippin {
   0%, 100% {
-    -webkit-transform: scale(1); }
+    -webkit-transform: scale(1);
+    transform: scale(1); }
 
   50% {
-    -webkit-transform: scale(1.2); } }
+    -webkit-transform: scale(1.2);
+    transform: scale(1.2); } }
 @-webkit-keyframes grow {
   0%, 100% {
-    -webkit-transform: scale(0); }
+    -webkit-transform: scale(0);
+    transform: scale(0); }
 
   50% {
-    -webkit-transform: scale(2); } }
+    -webkit-transform: scale(2);
+    transform: scale(2); } }
 @-moz-keyframes grow {
   0%, 100% {
-    -webkit-transform: scale(0); }
+    -webkit-transform: scale(0);
+    transform: scale(0); }
 
   50% {
-    -webkit-transform: scale(2); } }
+    -webkit-transform: scale(2);
+    transform: scale(2); } }
 @-o-keyframes grow {
   0%, 100% {
-    -webkit-transform: scale(0); }
+    -webkit-transform: scale(0);
+    transform: scale(0); }
 
   50% {
-    -webkit-transform: scale(2); } }
+    -webkit-transform: scale(2);
+    transform: scale(2); } }
 @keyframes grow {
   0%, 100% {
-    -webkit-transform: scale(0); }
+    -webkit-transform: scale(0);
+    transform: scale(0); }
 
   50% {
-    -webkit-transform: scale(2); } }
+    -webkit-transform: scale(2);
+    transform: scale(2); } }
 @-webkit-keyframes fadeIn {
   0% {
     opacity: 0; }
