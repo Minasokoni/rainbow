@@ -1,0 +1,138 @@
+@import 'animate';
+
+body {
+    background: #222;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    margin:0;
+}
+
+@include keyframe(dance) {
+    0% {
+        width: 0px;
+    }
+    50% {
+        width: 100%;
+    }
+    100% {
+        width: 0px;
+    }
+}
+
+@include keyframe(active) {
+    0% {
+        width: 100%;
+    }
+    50% {
+        width: 0px;
+    }
+    100% {
+        width: 100%;
+    }
+}
+
+@include keyframe(trippin) {
+    0%, 100% {
+        -webkit-transform:scale(1);
+    }
+    50% {
+        -webkit-transform:scale(1.2);
+    }
+}
+
+@include keyframe(grow) {
+    0%, 100% {
+        -webkit-transform:scale(0);
+    }
+    50% {
+        -webkit-transform:scale(2);
+    }
+}
+
+@include keyframe(fadeIn) {
+    0% {
+        opacity:0;
+    }
+    100% {
+        opacity:1;
+    }
+}
+
+.rainbow {
+    list-style:none;
+    margin:0;
+    padding:0;
+    li {
+        height:25px;
+        margin:0 auto;
+        cursor:pointer;
+        width:25px;
+        @for $i from 1 through 360 {
+          &:nth-child(#{$i}) {
+            background: hsl($hue: $i * 5, $saturation: 100%, $lightness: 50%);
+          }
+        }
+        &.ray {
+            @include animation (dance, 10s, infinite, cubic-bezier(0.92, 0.14, 0.17, 0.91));
+        }
+        &:hover {
+            width: 900px;
+        }
+        &.active {
+            @include animation (active, 5s, infinite, ease-in-out);
+        }
+    }
+}
+
+.bob {
+    width: 600px;
+    position:fixed;
+    left:50%;
+    bottom:-10px;
+    margin-left:-300px;
+    @include animation (fadeIn, 5s, 1, ease-in-out);
+    img {
+        width: 100%;
+    }
+    h1 {
+        font-family: 'Varela Round', sans-serif;
+        text-transform:uppercase;
+        font-size:60px;
+        color:#fff;
+        text-align:center;
+        position:absolute;
+        top:-150px;
+        width:400px;
+        left:50%;
+        margin-left:-200px;
+        @include animation (grow, 10s, infinite, ease-in-out);
+    }
+    .eye {
+        width:50px;
+        height:50px;
+        background:#a5bbe1;
+        border-radius:50%;
+        display:block;
+        position:absolute;
+        z-index:9;
+        top: 60px;
+        left: 245px;
+        border:3px solid #000;
+        @include animation (trippin, 1s, infinite, ease-in-out);
+        &:after {
+            content:'';
+            width:30px;
+            height:30px;
+            background:#000;
+            border-radius:50%;
+            display:block;
+            position:absolute;
+            top:50%;
+            left:50%;
+            margin:-15px -15px;
+        }
+        &:nth-child(3){
+            top: 68px;
+            left: 316px;
+        }
+    }
+}
