@@ -4,8 +4,10 @@ var Rainbow  = Rainbow || ( function(){
   var container = $('ul.rainbow'),
   win           = $(window),
   beamHeight    = 5,
+  bob           = $('.bob'),
 
   init = function () {
+    music();
     rays();
     interact();
   },
@@ -26,6 +28,35 @@ var Rainbow  = Rainbow || ( function(){
     container.find('li').each(function(idx){
       $(this).css('AnimationDelay', (idx / 100) + "s");
     });
+
+    setTimeout(function(){
+      $("html, body").animate({ scrollTop: $(document).height() }, 5000);
+    }, 2000);
+
+  },
+
+  music = function() {
+    var tycho = document.getElementById('tycho'),
+    music     = $(tycho);
+
+    music.on('play', function(){
+      bob.addClass('start');
+    });
+
+    music.on('pause', function(){
+      bob.fadeTo(0.5, 500);
+    });
+
+
+    bob.on('click', function(){
+      if(tycho.paused){
+        tycho.play();
+      }else{
+        tycho.pause();
+      }
+      return false;
+    });
+
 
   },
 

@@ -66,6 +66,7 @@ body {
         margin:0 auto;
         cursor:pointer;
         width:25px;
+        @include transition(all, 2s, ease-in-out);
         @for $i from 1 through 360 {
           &:nth-child(#{$i}) {
             background: hsl($hue: $i * 5, $saturation: 100%, $lightness: 50%);
@@ -73,9 +74,6 @@ body {
         }
         &.ray {
             @include animation (dance, 10s, infinite, cubic-bezier(0.92, 0.14, 0.17, 0.91));
-        }
-        &:hover {
-            width: 900px;
         }
         &.active {
             @include animation (active, 5s, infinite, ease-in-out);
@@ -89,7 +87,12 @@ body {
     left:50%;
     bottom:-10px;
     margin-left:-300px;
-    @include animation (fadeIn, 5s, 1, ease-in-out);
+    &.start {
+        @include animation (fadeIn, 10s, 1, ease-in-out);
+        .eye {
+            @include animation (trippin, 0.5s, infinite, ease-in-out);
+        }
+    }
     img {
         width: 100%;
     }
@@ -117,7 +120,6 @@ body {
         top: 60px;
         left: 245px;
         border:3px solid #000;
-        @include animation (trippin, 1s, infinite, ease-in-out);
         &:after {
             content:'';
             width:30px;
