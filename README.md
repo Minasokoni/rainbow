@@ -14,7 +14,7 @@ Install
 1. Checkout Branch
 2. Run `npm install`
 3. Run `bower install`
-5. Enjoy!
+5. Stare into Spongebob's eyes and vibe out!
 
 Click on the rays to reverse the animation.
 Click on spongebob to pause music.
